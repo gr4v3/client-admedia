@@ -1,4 +1,5 @@
 <?php
+if (filter_input(INPUT_GET,'logout')) session_destroy();
 session_start();
 function Debug($content, $die = FALSE) {
     echo '<pre>';

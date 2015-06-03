@@ -16,6 +16,6 @@
         <div class="item"><a href="javascript:;">Dados Pessoais</a></div>
         <div class="item"><a href="javascript:;">Convidar Amigos</a></div>
         <div class="item"><a href="javascript:;">Ajuda</a></div>
-        <div class="item"><a href="javascript:;">Sair</a></div>
+        <div class="item"><a href="/?logout">Sair</a></div>
     </div>
 </div>

@@ -81,24 +81,16 @@ function detectswipe(el,func) {
     var menucontainer = document.getElementsByClassName('menu-container');
     var containerfluid = document.getElementsByClassName('container-fluid');
     if (menu.length && menucontainer.length && containerfluid.length) {
-        
         menuitem = menu.item(0);
         menuitem.open = false;
-        menuitem.clicked = false;
         menucontaineritem = menucontainer.item(0);
         containerfluiditem = containerfluid.item(0);
-            menuitem.onclick = function() {
-                menuitem.clicked = true;
-                if (!menuitem.open) {
-                    menucontaineritem.className = 'menu-container active';
-                    menuitem.open = true;
-                } else {
-                    menucontaineritem.className = 'menu-container';
-                    menuitem.open = false;
-                }
-            };
-        containerfluiditem.onclick = function() {
-            if (menuitem.open && !menuitem.clicked) {
+        containerfluiditem.onclick = function(e) {
+            var event = e || window.event;
+            if (event.srcElement.parentNode === menuitem) {
+                menucontaineritem.className = 'menu-container active';
+                menuitem.open = true;
+            } else {
                 menucontaineritem.className = 'menu-container';
                 menuitem.open = false;
             }
@@ -108,16 +100,13 @@ function detectswipe(el,func) {
                 case 'right':
                         menucontaineritem.className = 'menu-container active';
                         menuitem.open = true;
-                        
                     break;
                 case 'left':
                         menucontaineritem.className = 'menu-container';
                         menuitem.open = false;
-                        menuitem.clicked = false;
                     break;
             }
         });    
     }
-    
 })();
 

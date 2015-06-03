@@ -74,6 +74,7 @@ function cache_exists($params = NULL) {
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+Debug($_SERVER);
 if (empty($_SESSION['client'])) $page = 'login'; else {
     $client = json_decode($_SESSION['client']);
     $page = 'categories';           

@@ -2,7 +2,8 @@
 session_start();
 if (filter_input(INPUT_GET,'logout')) {
     session_destroy();
-    header('Location: ' . filter_input(INPUT_SERVER, 'REQUEST_SCHEME') . '://'. filter_input(INPUT_SERVER, 'HTTP_HOST'));
+    $request_scheme = filter_input(INPUT_SERVER, 'REQUEST_SCHEME');
+    header('Location: ' . ($request_scheme?'http':$request_scheme) . '://'. filter_input(INPUT_SERVER, 'HTTP_HOST'));
     die();
 }
 function Debug($content, $die = FALSE) {

@@ -55,12 +55,12 @@ function curl($params){
     return $output;
 }
 function cache_save($value = NULL) {
-	if (!empty($value)) file_put_contents($value->status->cache_id, json_encode($value));
+	if (!empty($value)) file_put_contents('cache/' . $value->status->cache_id, json_encode($value));
 	return TRUE;
 }
 function cache_exists($params = NULL) {
 	$file = md5($params);
-	if (is_file($file)) return json_decode(file_get_contents($file));
+	if (is_file('cache/' . $file)) return json_decode(file_get_contents('cache/' . $file));
 	else return FALSE;
 	
 }

@@ -1,0 +1,71 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 1/jun/2015, 21:29:42
+    Author     : fabio menezes
+*/
+.top {
+    background-image: url(../img/beach.jpg);
+    height: 13.4em;
+    background-size: cover;
+}
+.top .header {
+    overflow:hidden;
+}
+.top .menu,
+.top .search {
+    
+    color: rgba(255, 255, 255, 0.48);
+}
+.top .menu:hover ,
+.top .search:hover {
+    color:white;
+}
+.top .menu {
+    float:left;
+    font-size: 2em;
+    padding: 10px;
+}
+.top .search {
+    float:right;
+    font-size: 2em;
+    padding: 10px;
+}
+.plan {
+    text-align: center;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.3em;
+  border: 1px solid rgba(255, 255, 255, 0.54);
+  margin: 22px;
+  padding: 10px;
+}
+.plan .small {
+    font-size:0.46em;
+}
+
+.categories {
+    
+}
+.categories ul {
+    padding:0;
+    margin:0;
+}
+.categories ul li {
+    background-size: cover;
+    height: 12em;
+    padding-top: 5em;
+}
+.categories .title,
+.categories .description {
+    background-color: transparent;
+    color:white;
+    text-align:center;
+    padding: 0;
+}
+.categories .description {
+    padding-top: 3em;
+}

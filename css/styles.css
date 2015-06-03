@@ -10,6 +10,7 @@ and open the template in the editor.
 
 body.admedia {
     padding:0;
+    margin: 0;
     background-color: #EBEFF1;
 }
 .container-fluid {

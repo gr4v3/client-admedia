@@ -12,6 +12,7 @@ $hotels = current($categories->items);
 $media = request('tag=media&media=' . $hotels->media_id . '&token='. $token);
  */
 $categories = request('tag=categories&token='.$client->user->token);
+include_once 'menu.php';
 ?>
 <div class="container-fluid fullheight">
     <div class="top">

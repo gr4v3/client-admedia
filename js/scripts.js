@@ -4,8 +4,11 @@
  * and open the template in the editor.
  */
 window.onresize = function() {
+    
   var container = document.getElementsByClassName('fullheight');
     if (container.length && window.innerWidth < window.innerHeight) {
+        
+        
         var element = container[0];
         console.log(element);
             element.style.cssText = 'min-height:' + window.innerHeight + 'px;';
@@ -42,6 +45,6 @@ function toggleFullScreen() {
 
 (function() {
     toggleFullScreen();
-    window.onresize();
+    //window.onresize();
 })();
 

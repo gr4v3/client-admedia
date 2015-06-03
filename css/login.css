@@ -1,0 +1,63 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 3/jun/2015, 17:40:08
+    Author     : fabio menezes
+*/
+
+
+.title {
+    background-color: #4FB269;
+    text-align: center;
+    padding:20px;
+    color:white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.greetings, .question {
+    text-align: center;
+    padding: 1.4em;
+    color: #4FB269;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.login, .frontimage {
+      padding: 0 20px;
+    
+}
+input {
+    width:100%;
+    padding:10px;
+    margin-bottom:10px;
+    color:#4FB269;
+}
+input[type=submit] {
+    background-color: #084A66;
+    border: 0;
+    text-transform: uppercase;
+    color:white;
+}
+.login .forgot {
+    text-align: center;
+    font-size: 0.9em;
+}
+.forgot a {
+    color:black;
+}
+.question {
+    color:white;
+}
+.frontimage {
+    background-image: url(../img/madeira-walks.jpg);
+    background-size: cover;
+    height: 15em;
+}
+.frontimage input[type=submit] {
+    background-color: #4FB269;
+}
+

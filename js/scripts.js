@@ -84,7 +84,8 @@ function detectswipe(el,func) {
         containerfluiditem = containerfluid.item(0);
         containerfluiditem.onclick = function(e) {
             var event = e || window.event;
-            if (event.srcElement.parentNode === menuitem) {
+            console.log(event);
+            if (event.srcElement.parentNode === menuitem || event.srcElement === menuitem) {
                 menucontaineritem.className = 'menu-container active';
                 containerfluiditem.className = 'container-fluid fullheight fixed';
                 menuitem.open = true;

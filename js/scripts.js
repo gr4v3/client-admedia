@@ -79,21 +79,41 @@ function detectswipe(el,func) {
     toggleFullScreen();
     var menu = document.getElementsByClassName('menu');
     var menucontainer = document.getElementsByClassName('menu-container');
-    if (menu.length && menucontainer.length) {
+    var containerfluid = document.getElementsByClassName('container-fluid');
+    if (menu.length && menucontainer.length && containerfluid.length) {
         
-        var menuitem = menu.item(0);
-        var menucontaineritem = menucontainer.item(0);
+        menuitem = menu.item(0);
+        menuitem.open = false;
+        menuitem.clicked = false;
+        menucontaineritem = menucontainer.item(0);
+        containerfluiditem = containerfluid.item(0);
             menuitem.onclick = function() {
-                if (menucontaineritem.className === 'menu-container') menucontaineritem.className = 'menu-container active';
-                else menucontaineritem.className = 'menu-container';
+                menuitem.clicked = true;
+                if (!menuitem.open) {
+                    menucontaineritem.className = 'menu-container active';
+                    menuitem.open = true;
+                } else {
+                    menucontaineritem.className = 'menu-container';
+                    menuitem.open = false;
+                }
             };
+        containerfluiditem.onclick = function() {
+            if (menuitem.open && !menuitem.clicked) {
+                menucontaineritem.className = 'menu-container';
+                menuitem.open = false;
+            }
+        };    
         detectswipe(document.body, function(direction) {
             switch(direction) {
                 case 'right':
                         menucontaineritem.className = 'menu-container active';
+                        menuitem.open = true;
+                        
                     break;
                 case 'left':
                         menucontaineritem.className = 'menu-container';
+                        menuitem.open = false;
+                        menuitem.clicked = false;
                     break;
             }
         });    

@@ -1,6 +1,10 @@
 <?php
 session_start();
-if (filter_input(INPUT_GET,'logout')) session_destroy();
+if (filter_input(INPUT_GET,'logout')) {
+    session_destroy();
+    header('Location: ' . filter_input(INPUT_SERVER, 'REQUEST_SCHEME') . '://'. filter_input(INPUT_SERVER, 'HTTP_HOST'));
+    die();
+}
 function Debug($content, $die = FALSE) {
     echo '<pre>';
     print_r($content);
@@ -63,20 +67,16 @@ function cache_exists($params = NULL) {
 	$file = md5($params);
 	if (is_file('cache/' . $file)) return json_decode(file_get_contents('cache/' . $file));
 	else return FALSE;
-	
 }
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 if (empty($_SESSION['client'])) $page = 'login'; else {
     $client = json_decode($_SESSION['client']);
     $page = 'categories';           
 }
-
-
 if (filter_input(INPUT_POST,'login')) {
     $username = filter_input(INPUT_POST,'username');
     $password = filter_input(INPUT_POST,'password');    

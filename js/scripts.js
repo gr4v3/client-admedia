@@ -3,8 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 function toggleFullScreen() {
   if (!document.fullscreenElement &&    // alternative standard method
       !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
@@ -74,7 +72,6 @@ function detectswipe(el,func) {
     return true;
   },true);  
 }
-
 (function() {
     toggleFullScreen();
     var menu = document.getElementsByClassName('menu');

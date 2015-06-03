@@ -2,8 +2,8 @@
 session_start();
 if (filter_input(INPUT_GET,'logout')) {
     session_destroy();
-    $request_scheme = filter_input(INPUT_SERVER, 'REQUEST_SCHEME');
-    header('Location: ' . ($request_scheme?'http':$request_scheme) . '://'. filter_input(INPUT_SERVER, 'HTTP_HOST'));
+    $https = filter_input(INPUT_SERVER, 'HTTPS');
+    header('Location: ' . (empty($https)?'http':'https') . '://'. filter_input(INPUT_SERVER, 'HTTP_HOST'));
     die();
 }
 function Debug($content, $die = FALSE) {
@@ -74,7 +74,7 @@ function cache_exists($params = NULL) {
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-Debug($_SERVER);
+
 if (empty($_SESSION['client'])) $page = 'login'; else {
     $client = json_decode($_SESSION['client']);
     $page = 'categories';           

@@ -57,7 +57,10 @@ and open the template in the editor.
 .categories ul li {
     background-size: cover;
     height: 12em;
-    padding-top: 5em;
+    padding-top: 4em;
+}
+.categories .title {
+    font-size: 2em;
 }
 .categories .title,
 .categories .description {
@@ -65,7 +68,8 @@ and open the template in the editor.
     color:white;
     text-align:center;
     padding: 0;
+    text-shadow: 2px 2px rgba(3, 3, 3, 0.17);
 }
 .categories .description {
-    padding-top: 3em;
+    padding-top: 2em;
 }

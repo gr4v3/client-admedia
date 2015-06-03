@@ -28,7 +28,7 @@ body.admedia {
 }
 .greetings, .question {
     text-align: center;
-     padding: 30px;
+    padding: 1.4em;
     color: #4FB269;
     text-transform: uppercase;
     font-weight: bold;
@@ -63,7 +63,7 @@ input[type=submit] {
 .frontimage {
     background-image: url(../img/madeira-walks.jpg);
     background-size: cover;
-      height: 277px;
+    height: 15em;
 }
 .frontimage input[type=submit] {
     background-color: #4FB269;

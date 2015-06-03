@@ -1,6 +1,6 @@
 <?php
-if (filter_input(INPUT_GET,'logout')) session_destroy();
 session_start();
+if (filter_input(INPUT_GET,'logout')) session_destroy();
 function Debug($content, $die = FALSE) {
     echo '<pre>';
     print_r($content);

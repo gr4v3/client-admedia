@@ -45,13 +45,14 @@ function detectswipe(el,func) {
     var t = e.touches[0];
     swipe_det.sX = t.screenX; 
     swipe_det.sY = t.screenY;
-  },false);
+    return true;
+  },true);
   ele.addEventListener('touchmove',function(e){
-    e.preventDefault();
     var t = e.touches[0];
     swipe_det.eX = t.screenX; 
     swipe_det.eY = t.screenY;    
-  },false);
+    return true;
+  },true);
   ele.addEventListener('touchend',function(e){
     //horizontal detection
     if ((((swipe_det.eX - min_x > swipe_det.sX) || (swipe_det.eX + min_x < swipe_det.sX)) && ((swipe_det.eY < swipe_det.sY + max_y) && (swipe_det.sY > swipe_det.eY - max_y)))) {
@@ -68,7 +69,8 @@ function detectswipe(el,func) {
       if(typeof func === 'function') func(direc);
     }
     direc = "";
-  },false);  
+    return true;
+  },true);  
 }
 
 (function() {

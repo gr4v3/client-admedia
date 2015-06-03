@@ -13,8 +13,8 @@ body.admedia {
     margin: 0;
     background-color: #EBEFF1;
 }
-.container-fluid {
-
+.container-fluid.fixed {
+    position:fixed;
 }
 
 .menu-container {

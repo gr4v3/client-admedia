@@ -89,9 +89,11 @@ function detectswipe(el,func) {
             var event = e || window.event;
             if (event.srcElement.parentNode === menuitem) {
                 menucontaineritem.className = 'menu-container active';
+                containerfluiditem.className = 'container-fluid fullheight fixed';
                 menuitem.open = true;
             } else {
                 menucontaineritem.className = 'menu-container';
+                containerfluiditem.className = 'container-fluid fullheight';
                 menuitem.open = false;
             }
         };    
@@ -99,10 +101,12 @@ function detectswipe(el,func) {
             switch(direction) {
                 case 'right':
                         menucontaineritem.className = 'menu-container active';
+                        containerfluiditem.className = 'container-fluid fullheight fixed';
                         menuitem.open = true;
                     break;
                 case 'left':
                         menucontaineritem.className = 'menu-container';
+                        containerfluiditem.className = 'container-fluid fullheight';
                         menuitem.open = false;
                     break;
             }

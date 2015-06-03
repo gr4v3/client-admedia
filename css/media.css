@@ -11,8 +11,7 @@ and open the template in the editor.
 
 @media (max-width:360px){
     .frontimage {
-        position: fixed;
-        bottom:0;
+
     }
 }
 

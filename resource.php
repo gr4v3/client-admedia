@@ -32,7 +32,7 @@ function curl($params){
     $ch = curl_init();
     // Now set some options (most are optional)
     // Set URL to download
-    curl_setopt($ch, CURLOPT_URL, 'http://api-dev.admedia.pt');
+    curl_setopt($ch, CURLOPT_URL, 'http://api.admedia.pt');
     // User agent
     curl_setopt($ch, CURLOPT_USERAGENT, "MozillaXYZ/1.0");
     // Include header in result? (0 = yes, 1 = no)
